@@ -1,0 +1,130 @@
+.banner {
+	background: var(--primary);
+	color: var(--white);
+	overflow: clip;
+	.title-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-left: 415px;
+		.description {
+			max-width: 460px;
+			color: #adbcf0;
+			leading-trim: both;
+			text-edge: cap;
+			font-family: 'Bingar DEMO';
+			font-size: 28px;
+			font-style: normal;
+			font-weight: 400;
+			margin-bottom: -100px;
+			line-height: normal;
+			padding-right: 30px;
+		}
+
+		.title-area {
+			display: flex;
+			align-items: center;
+			gap: 40px;
+		}
+
+		.star-icon {
+			margin-bottom: -100px;
+		}
+	}
+
+	.email-box {
+		text-align: center;
+		margin-left: 32%;
+		.email-text {
+			color: #fff;
+			text-align: center;
+			leading-trim: both;
+			text-edge: cap;
+			font-family: 'Bingar DEMO';
+			font-size: 35px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			text-transform: uppercase;
+			margin-top: 40px;
+			display: inline-block;
+		}
+	}
+	.swiper-wrapper {
+		padding-bottom: 355px;
+	}
+	.swiper-slide {
+		.slide-image-container {
+			.slide-image {
+				max-width: 788px;
+				max-height: 920px;
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: -88px;
+				bottom: -355px;
+				// width: 300px;
+				// height: 300px;
+				// background-image: url('/assets/images/slider/slider-1.png');
+				-webkit-mask-image: url('/assets/images/icons/image-musk.svg'); /* For Webkit browsers */
+				mask-image: url('/assets/images/icons/image-musk.svg'); /* Standard property */
+				-webkit-mask-repeat: no-repeat;
+				mask-repeat: no-repeat;
+				-webkit-mask-size: cover;
+				mask-size: cover;
+				background-size: cover;
+			}
+		}
+	}
+
+	.tumb-images {
+		max-width: 582px;
+		margin-left: auto;
+		margin-right: 200px;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		.swiper-wrapper {
+			justify-content: end;
+		}
+		img {
+			width: 180.786px;
+			height: 174.329px;
+			flex-shrink: 0;
+			border-radius: 30px;
+		}
+	}
+
+	// .masked-image {
+	// 	width: 300px;
+	// 	height: 300px;
+	// 	background-image: url('/assets/images/slider/slider-1.png');
+	// 	-webkit-mask-image: url('/assets/images/icons/image-musk.svg'); /* For Webkit browsers */
+	// 	mask-image: url('/assets/images/icons/image-musk.svg'); /* Standard property */
+	// 	-webkit-mask-repeat: no-repeat;
+	// 	mask-repeat: no-repeat;
+	// 	-webkit-mask-size: cover;
+	// 	mask-size: cover;
+	// }
+}
+.title {
+	color: #fff;
+	font-family: 'Hagrid Extrabold';
+	font-size: 200px;
+	font-style: normal;
+	font-weight: 800;
+	line-height: 1;
+	.small-text {
+		color: #fff;
+		leading-trim: both;
+		text-edge: cap;
+		font-family: 'Bingar DEMO';
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+}

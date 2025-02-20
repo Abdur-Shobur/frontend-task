@@ -1,0 +1,107 @@
+.header {
+	background: var(--primary);
+	color: var(--white);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 80%;
+		height: 2px;
+		background: var(--white);
+		bottom: 0;
+		left: 0;
+	}
+
+	&-logo {
+		border-right: 2px solid var(--white);
+		padding: rem(29) rem(50);
+	}
+
+	&-action {
+		display: flex;
+		align-items: center;
+		gap: rem(53);
+		padding-right: rem(50);
+		.cart {
+			margin-bottom: 2px;
+			display: inline-block;
+		}
+
+		.hamburger {
+			top: 4px;
+			width: 85px;
+			display: inline-block;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				width: 85px;
+				height: 2px;
+				background: var(--white);
+				left: 0;
+				top: -20px;
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				width: 85px;
+				height: 2px;
+				background: var(--white);
+				left: 0;
+			}
+		}
+	}
+}
+.header-mark-slide {
+	position: absolute;
+	right: -334px;
+	top: 152px;
+	background: #19ec60;
+	transform: rotate(45deg);
+	.text-container {
+		padding-left: 20px;
+		padding-right: 20px;
+		height: 120px;
+
+		flex-shrink: 0;
+	}
+	.animate-area {
+		flex-wrap: nowrap;
+		white-space: nowrap;
+		display: flex;
+		align-items: center;
+		gap: rem(10);
+		height: 100%;
+		animation: marquee 35s linear infinite;
+	}
+	.slide-text {
+		color: #041c0c;
+		leading-trim: both;
+		text-edge: cap;
+		font-family: 'Bingar DEMO';
+		font-size: 70px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+	.star-icon {
+		width: 45px;
+		height: 45px;
+		object-fit: contain;
+	}
+}
+@keyframes marquee {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}

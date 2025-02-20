@@ -1,0 +1,56 @@
+.text-- {
+	&primary {
+		color: var(--primary);
+	}
+	&secondary {
+		color: var(--text-secondary);
+	}
+	&white {
+		color: var(--white);
+	}
+	&black {
+		color: var(--black);
+	}
+	&of-white {
+		color: var(--text-of-white);
+	}
+}
+
+// font
+.font-- {
+	&36 {
+		font-size: rem(36);
+
+		@include responsive(md) {
+			font-size: rem(24);
+		}
+	}
+	&14 {
+		font-size: rem(14);
+	}
+	&16 {
+		font-size: rem(16);
+	}
+	&18 {
+		font-size: rem(18);
+	}
+}
+
+// font width
+.fw-- {
+	&700 {
+		font-weight: 700;
+	}
+	&600 {
+		font-weight: 600;
+	}
+	&500 {
+		font-weight: 500;
+	}
+	&400 {
+		font-weight: 400;
+	}
+	&300 {
+		font-weight: 300;
+	}
+}
