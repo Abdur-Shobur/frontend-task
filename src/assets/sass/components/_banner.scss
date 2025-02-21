@@ -2,11 +2,16 @@
 	background: var(--primary);
 	color: var(--white);
 	overflow: clip;
+	.banner-main {
+		padding-top: 45px;
+		width: calc(100% - 200px);
+	}
 	.title-box {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		margin-left: 415px;
+
 		.description {
 			max-width: 460px;
 			color: #adbcf0;
@@ -34,9 +39,10 @@
 
 	.email-box {
 		text-align: center;
-		margin-left: 32%;
+		margin-left: 42%;
 		.email-text {
 			color: #fff;
+
 			text-align: center;
 			leading-trim: both;
 			text-edge: cap;
@@ -46,12 +52,12 @@
 			font-weight: 400;
 			line-height: normal;
 			text-transform: uppercase;
-			margin-top: 40px;
+			margin-top: 50px;
 			display: inline-block;
 		}
 	}
 	.swiper-wrapper {
-		padding-bottom: 355px;
+		padding-bottom: 390px;
 	}
 	.swiper-slide {
 		.slide-image-container {
@@ -63,7 +69,7 @@
 				height: 100%;
 				position: absolute;
 				left: -88px;
-				bottom: -355px;
+				bottom: -390px;
 				// width: 300px;
 				// height: 300px;
 				// background-image: url('/assets/images/slider/slider-1.png');
@@ -81,13 +87,27 @@
 	.tumb-images {
 		max-width: 582px;
 		margin-left: auto;
-		margin-right: 200px;
+		margin-right: 100px;
 		position: absolute;
 		right: 0;
-		bottom: 0;
+		bottom: 65px;
 
 		.swiper-wrapper {
 			justify-content: end;
+		}
+		.count-item {
+			color: #fff;
+			leading-trim: both;
+			text-edge: cap;
+			// font-family: 'Bingar DEMO';
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			letter-spacing: -2.2px;
+			text-transform: uppercase;
+			text-align: start;
+			margin-bottom: 18px;
 		}
 		img {
 			width: 180.786px;
@@ -116,6 +136,7 @@
 	font-style: normal;
 	font-weight: 800;
 	line-height: 1;
+
 	.small-text {
 		color: #fff;
 		leading-trim: both;
@@ -126,5 +147,12 @@
 		font-weight: 400;
 		line-height: normal;
 		text-transform: uppercase;
+	}
+
+	&.fz-210 {
+		font-size: 210px;
+	}
+	&.fz-237 {
+		font-size: 237px;
 	}
 }
