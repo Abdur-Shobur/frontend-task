@@ -1,14 +1,40 @@
 <section class="work" id="work">
 	<div class="work-fs-1">
 		<h1 class="work-title">Let's</h1>
-		<img src="assets/images/icons/arrow.svg" alt="icon" />
+		<img class="arrow-icon" src="assets/images/icons/arrow.svg" alt="icon" />
 	</div>
 	<div class="work-fs-2">
-		<img src="assets/images/work/work.png" alt="work" />
+		<img class="work-img" src="assets/images/work/work.png" alt="work" />
 		<h1 class="work-title">work</h1>
 	</div>
 	<div class="work-fs-3">
 		<h1 class="work-title">together</h1>
 	</div>
-	<div class="work-fs-4"></div>
+	<div class="work-fs-4">
+		<div class="work-circle">
+			<div class="circle">
+				<div class="logo"></div>
+				<div class="logo-bg"></div>
+				<div class="bg"></div>
+				<div id="text" class="text">
+					<p>Let's Talks Let's Talks Let's Talks</p>
+				</div>
+			</div>
+		</div>
+		<a class="mailto" href="mailto:info@workmail.com">info@workmail.com</a>
+	</div>
+
+	<script>
+		const text = document.querySelector('#text p');
+
+		text.innerHTML = text.innerText
+			.split('')
+			.map(
+				(char, i) =>
+					`<span style="transform:rotate(${parseInt(
+						i * 10
+					)}deg)">${char}</span>`
+			)
+			.join('');
+	</script>
 </section>

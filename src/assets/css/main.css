@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @font-face {
     font-family: "Hagrid Extrabold";
-    src: url("../fonts/Hagrid-Text-Extrabold-trial.ttf") format("truetype");
-    font-weight: 800;
-    font-style: normal;
+  src: url("../fonts/Hagrid-Text-Extrabold-trial.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
 }
 
 @font-face {
@@ -44,6 +46,11 @@
     --text-primary: #2b2c3f;
     --text-secondary: #393f44;
     --text-of-white: #7d7d7d;
+    --radius: 35vmin;
+    --frame-size: calc(var(--radius) / 3);
+    --d-outer: calc(var(--radius) * 2);
+    --d-inner: calc(var(--d-outer) - var(--frame-size));
+    --font-size: calc(var(--radius) / 10);
 }
 
 html {
@@ -57,17 +64,6 @@ body {
     line-height: normal;
     overflow: hidden;
     overflow-y: auto;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: var(--heading-font);
-    font-style: normal;
-    line-height: normal;
 }
 
 p {
@@ -398,8 +394,320 @@ ul {
     object-fit: cover;
 }
 
+.news {
+    width: calc(100% - 180px);
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.news .section-title {
+    color: #030611;
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Roboto;
+    font-size: 128px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.news-badge {
+    width: max-content;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background: var(--warn);
+    color: var(--Font-Colors, #030611);
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 4px 10px;
+    display: inline-flex;
+}
+
+.news-date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.news-date .icon {
+    color: #fff;
+    font-size: 15px;
+}
+
+.news-date .date {
+    color: #fff;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.news-cards .card-item {
+    height: 550px;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 50px 37px;
+    position: relative;
+}
+
+.news-cards .card-item::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(18, 16, 16, 0) 0%, #121010 100%);
+    z-index: 0;
+}
+
+.news-cards .card-item .badge-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.news-cards .card-item .news-link {
+    color: var(--White, #fff);
+    text-align: center;
+    leading-trim: both;
+    text-edge: cap;
+  /* h5 */
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.news-cards .card-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 206px;
+    background: transparent;
+    z-index: 0;
+}
+
+.news-cards .card-item:hover::before {
+    display: none;
+}
+
+.news-cards .card-item:hover::after {
+    background: #000;
+}
+
 .work {
     background: var(--secondary);
+    padding-bottom: 170px;
+}
+
+.work .work-title {
+    color: #041c0c;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Hagrid Extrabold";
+    font-style: normal;
+    font-weight: 800;
+    line-height: 200px;
+ /* 105.263% */
+    text-transform: uppercase;
+}
+
+.work .work-fs-1 {
+    margin-left: 224px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-top: 135px;
+}
+
+.work .work-fs-1 .work-title {
+    font-size: 190px;
+}
+
+.work .work-fs-1 .arrow-icon {
+    margin-top: 50px;
+}
+
+.work .work-fs-2 {
+    margin-left: 322px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-top: 10px;
+}
+
+.work .work-fs-2 .work-img {
+    width: 343px;
+    height: 237px;
+    border-radius: 0px 118.5px 118.5px 82px;
+    margin-top: 50px;
+}
+
+.work .work-fs-2 .work-title {
+    font-size: 310px;
+    margin-top: -68px;
+}
+
+.work .work-fs-3 {
+    padding-top: 20px;
+    margin-left: 148px;
+}
+
+.work .work-fs-3 .work-title {
+    font-size: 220px;
+}
+
+.work .work-fs-4 {
+    display: flex;
+    align-items: center;
+    gap: 54px;
+    margin-left: 42%;
+    margin-top: -60px;
+}
+
+.work .work-fs-4 .circle {
+    position: relative;
+    width: 376px;
+    height: 376px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.work .work-fs-4 .bg {
+    position: absolute;
+    width: 376px;
+    height: 376px;
+    background: #fff;
+    background-size: cover;
+    border-radius: 50%;
+    border: 1px solid #041c0c;
+}
+
+.work .work-fs-4 .logo {
+    position: absolute;
+    width: 376px;
+    height: 376px;
+    background: url("../images/icons/hand.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 110.178px;
+    height: 104.869px;
+    z-index: 2;
+    animation: handshake 0.8s ease-in-out infinite;
+}
+
+.work .work-fs-4 .logo-bg {
+    background: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 208px;
+    height: 208px;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+
+.work .work-fs-4 .text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateText 10s linear infinite;
+}
+
+.work .work-fs-4 .text p {
+    position: absolute;
+    left: 50%;
+    top: 6%;
+}
+
+.work .work-fs-4 .mailto {
+    color: #1c2503;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Bingar DEMO";
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 90px;
+ /* 128.571% */
+}
+
+@keyframes handshake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(-10deg);
+    }
+
+    40% {
+        transform: rotate(10deg);
+    }
+
+    60% {
+        transform: rotate(-5deg);
+    }
+
+    80% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateText {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.work .work-fs-4 .text p span {
+    position: absolute;
+    left: 50%;
+    font-size: 26px;
+    transform-origin: 0 167px;
+    text-transform: capitalize;
 }
 
 .header {
