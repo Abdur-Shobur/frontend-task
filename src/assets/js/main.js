@@ -4,6 +4,10 @@
 	'use strict';
 
 	$(document).ready(function () {
+		$(window).on('load', function () {
+			$('#loading').fadeOut();
+		});
+
 		// sticky header
 		$(window).on('scroll', function () {
 			if ($(window).scrollTop() >= 60) {
