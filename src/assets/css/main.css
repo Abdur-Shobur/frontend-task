@@ -38,11 +38,14 @@
 :root {
     --heading-font: "Marcellus", serif;
     --body-font: "Poppins", serif;
+    --Hagrid-font: "Hagrid Regular";
+    --Bingar-DEMO: "Bingar DEMO";
     --primary: #0c30ae;
     --secondary: #19ec60;
     --warn: #f7c600;
     --white: #ffffff;
     --black: #041c0c;
+    --black2: #151c02;
     --text-primary: #2b2c3f;
     --text-secondary: #393f44;
     --text-of-white: #7d7d7d;
@@ -205,6 +208,24 @@ ul {
     width: calc(100% - 200px);
 }
 
+@media (max-width: 1200px) {
+    .banner .banner-main {
+        width: calc(100% - 150px);
+    }
+}
+
+@media (max-width: 991px) {
+    .banner .banner-main {
+        width: calc(100% - 100px);
+    }
+}
+
+@media (max-width: 768px) {
+    .banner .banner-main {
+        width: calc(100% - 50px);
+    }
+}
+
 .banner .title-box {
     display: flex;
     justify-content: space-between;
@@ -212,12 +233,43 @@ ul {
     margin-left: 415px;
 }
 
+@media screen and (max-width: 1775px) {
+    .banner .title-box {
+        margin-left: 300px;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .banner .title-box {
+        margin-left: 165px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .banner .title-box {
+        margin-left: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner .title-box {
+        margin-left: 80px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .banner .title-box {
+        margin-left: 24px;
+    }
+}
+
 .banner .title-box .description {
     max-width: 460px;
     color: #adbcf0;
     leading-trim: both;
     text-edge: cap;
-    font-family: "Bingar DEMO";
+    font-family: var(--Bingar-DEMO);
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
@@ -226,14 +278,95 @@ ul {
     padding-right: 30px;
 }
 
+@media screen and (max-width: 1420px) {
+    .banner .title-box .description {
+        margin-bottom: -40px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner .title-box .description {
+        max-width: 350px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .banner .title-box .description {
+        max-width: 250px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .banner .title-box .description {
+        max-width: 200px;
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .banner .title-box .description {
+        max-width: 170px;
+        font-size: 16px;
+    }
+}
+
 .banner .title-box .title-area {
     display: flex;
     align-items: center;
     gap: 40px;
 }
 
+@media screen and (max-width: 580px) {
+    .banner .title-box .title-area {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .banner .title-box .title-area {
+        gap: 5px;
+    }
+}
+
 .banner .title-box .star-icon {
     margin-bottom: -100px;
+}
+
+@media screen and (max-width: 1775px) {
+    .banner .title-box .star-icon {
+        margin-bottom: -70px;
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    .banner .title-box .star-icon {
+        margin-bottom: -45px;
+        width: 90px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .banner .title-box .star-icon {
+        margin-bottom: -30px;
+        width: 60px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .banner .title-box .star-icon {
+        margin-bottom: -18px;
+        width: 38px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .banner .title-box .star-icon {
+        margin-bottom: -5px;
+        width: 24px;
+    }
 }
 
 .banner .email-box {
@@ -241,12 +374,18 @@ ul {
     margin-left: 42%;
 }
 
+@media screen and (max-width: 1775px) {
+    .banner .email-box {
+        margin-left: 17%;
+    }
+}
+
 .banner .email-box .email-text {
     color: #fff;
     text-align: center;
     leading-trim: both;
     text-edge: cap;
-    font-family: "Bingar DEMO";
+    font-family: var(--Bingar-DEMO);
     font-size: 35px;
     font-style: normal;
     font-weight: 400;
@@ -256,8 +395,40 @@ ul {
     display: inline-block;
 }
 
+@media (max-width: 1200px) {
+    .banner .email-box .email-text {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 991px) {
+    .banner .email-box .email-text {
+        font-size: 24px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner .email-box .email-text {
+        font-size: 20px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner .email-box .email-text {
+        font-size: 16px;
+    }
+}
+
 .banner .swiper-wrapper {
     padding-bottom: 390px;
+}
+
+@media screen and (max-width: 550px) {
+    .banner .swiper-wrapper {
+        padding-bottom: 175px;
+    }
 }
 
 .banner .swiper-slide .slide-image-container .slide-image {
@@ -280,6 +451,43 @@ ul {
     background-size: cover;
 }
 
+@media screen and (max-width: 1500px) {
+    .banner .swiper-slide .slide-image-container .slide-image {
+        max-width: 700px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner .swiper-slide .slide-image-container .slide-image {
+        max-width: 568px;
+        bottom: -314px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .banner .swiper-slide .slide-image-container .slide-image {
+        max-width: 455px;
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .banner .swiper-slide .slide-image-container .slide-image {
+        bottom: -241px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .banner .swiper-slide .slide-image-container .slide-image {
+        bottom: -180px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .banner .swiper-slide .slide-image-container .slide-image {
+        max-width: 320px;
+    }
+}
+
 .banner .tumb-images {
     max-width: 582px;
     margin-left: auto;
@@ -287,6 +495,62 @@ ul {
     position: absolute;
     right: 0;
     bottom: 65px;
+}
+
+@media screen and (max-width: 1420px) {
+    .banner .tumb-images {
+        margin-right: 25px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner .tumb-images {
+        bottom: 145px;
+        max-width: 560px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .banner .tumb-images {
+        max-width: 460px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .banner .tumb-images {
+        max-width: 368px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner .tumb-images {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .banner .tumb-images {
+        max-width: 250px;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .banner .tumb-images {
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner .tumb-images {
+        max-width: 150px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .banner .tumb-images {
+        max-width: 70px;
+        bottom: 30px;
+    }
 }
 
 .banner .tumb-images .swiper-wrapper {
@@ -307,11 +571,48 @@ ul {
     margin-bottom: 18px;
 }
 
+@media screen and (max-width: 1420px) {
+    .banner .tumb-images .count-item {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
 .banner .tumb-images img {
-    width: 180.786px;
-    height: 174.329px;
+    width: 180px;
+    height: 175px;
     flex-shrink: 0;
     border-radius: 30px;
+}
+
+@media screen and (max-width: 1420px) {
+    .banner .tumb-images img {
+        width: 150px;
+        height: 145px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner .tumb-images img {
+        width: 115px;
+        height: 115px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner .tumb-images img {
+        width: 80px;
+        height: 80px;
+        border-radius: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .banner .tumb-images img {
+        width: 50px;
+        height: 50px;
+        border-radius: 15px;
+    }
 }
 
 .title {
@@ -323,11 +624,47 @@ ul {
     line-height: 1;
 }
 
+@media screen and (max-width: 1775px) {
+    .title {
+        font-size: 150px;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    .title {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .title {
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .title {
+        font-size: 56px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .title {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .title {
+        font-size: 32px;
+    }
+}
+
 .title .small-text {
     color: #fff;
     leading-trim: both;
     text-edge: cap;
-    font-family: "Bingar DEMO";
+    font-family: var(--Bingar-DEMO);
     font-size: 30px;
     font-style: normal;
     font-weight: 400;
@@ -335,12 +672,96 @@ ul {
     text-transform: uppercase;
 }
 
+@media screen and (max-width: 1775px) {
+    .title .small-text {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .title .small-text {
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .title .small-text {
+        font-size: 20px;
+    }
+}
+
 .title.fz-210 {
     font-size: 210px;
 }
 
+@media screen and (max-width: 1775px) {
+    .title.fz-210 {
+        font-size: 155px;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    .title.fz-210 {
+        font-size: 110px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .title.fz-210 {
+        font-size: 90px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .title.fz-210 {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .title.fz-210 {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .title.fz-210 {
+        font-size: 35px;
+    }
+}
+
 .title.fz-237 {
     font-size: 237px;
+}
+
+@media screen and (max-width: 1775px) {
+    .title.fz-237 {
+        font-size: 160px;
+    }
+}
+
+@media screen and (max-width: 1420px) {
+    .title.fz-237 {
+        font-size: 126px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .title.fz-237 {
+        font-size: 110px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    .title.fz-237 {
+        font-size: 65px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .title.fz-237 {
+        font-size: 45px;
+    }
 }
 
 .swiper {
@@ -398,6 +819,8 @@ ul {
     width: calc(100% - 180px);
     max-width: 1920px;
     margin: 0 auto;
+    padding-top: 115px;
+    padding-bottom: 150px;
 }
 
 .news .section-title {
@@ -470,6 +893,10 @@ ul {
     position: relative;
 }
 
+.news-cards .card-item:nth-child(even) {
+    margin-top: 75px;
+}
+
 .news-cards .card-item::before {
     content: "";
     position: absolute;
@@ -479,6 +906,7 @@ ul {
     height: 50%;
     background: linear-gradient(180deg, rgba(18, 16, 16, 0) 0%, #121010 100%);
     z-index: 0;
+    transition: 0.3s;
 }
 
 .news-cards .card-item .badge-wrap {
@@ -513,9 +941,10 @@ ul {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 206px;
+    height: 0;
     background: transparent;
     z-index: 0;
+    transition: 0.3s;
 }
 
 .news-cards .card-item:hover::before {
@@ -524,6 +953,7 @@ ul {
 
 .news-cards .card-item:hover::after {
     background: #000;
+    height: 206px;
 }
 
 .work {
@@ -658,7 +1088,7 @@ ul {
     color: #1c2503;
     leading-trim: both;
     text-edge: cap;
-    font-family: "Bingar DEMO";
+    font-family: var(--Bingar-DEMO);
     font-size: 70px;
     font-style: normal;
     font-weight: 400;
@@ -710,6 +1140,116 @@ ul {
     text-transform: capitalize;
 }
 
+.footer {
+    background: var(--black2);
+    color: var(--white);
+    padding: 112px 90px 70px 90px;
+}
+
+.footer-social ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-social ul li a {
+    color: #fff;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--Bingar-DEMO);
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 42px;
+ /* 60% */
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: 1px solid #fff;
+    display: inline-flex;
+    padding: 50px 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.footer-social ul li a:hover {
+    background: #fff;
+    color: var(--black2);
+}
+
+.footer-top-area {
+    border-bottom: 3px solid var(--white);
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+}
+
+.footer-top-area .footer-logo {
+    grid-column: span 2;
+    border-right: 3px solid var(--white);
+}
+
+.footer-top-area .footer-pages {
+    border-right: 3px solid var(--white);
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 110px;
+    grid-column: span 7;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.footer-top-area .footer-pages .footer-page-title {
+    color: #fff;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Hagrid Extrabold";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 60px;
+ /* 171.429% */
+    text-transform: uppercase;
+}
+
+.footer-top-area .footer-pages .footer-page ul li a {
+    color: #fff;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: var(--Bingar-DEMO);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 42px;
+ /* 140% */
+    transition: all 0.3s ease;
+}
+
+.footer-top-area .footer-pages .footer-page ul li a:hover {
+    margin-left: 10px;
+}
+
+.footer-top-area .footer-info {
+    grid-column: span 3;
+}
+
+.footer-top-area .footer-info-text {
+    color: #fff;
+    max-width: 324px;
+    margin-left: auto;
+    leading-trim: both;
+    text-edge: cap;
+    font-family: "Hagrid Extrabold";
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 45px;
+ /* 128.571% */
+    text-transform: uppercase;
+}
+
 .header {
     background: var(--primary);
     color: var(--white);
@@ -734,11 +1274,24 @@ ul {
     padding: 1.8125rem 3.125rem;
 }
 
+@media (max-width: 850px) {
+    .header-logo {
+        padding: 0.9375rem 1.25rem;
+    }
+}
+
 .header-action {
     display: flex;
     align-items: center;
     gap: 3.3125rem;
     padding-right: 3.125rem;
+}
+
+@media (max-width: 850px) {
+    .header-action {
+        padding-right: 1.25rem;
+        gap: 1.875rem;
+    }
 }
 
 .header-action .cart {
@@ -751,12 +1304,19 @@ ul {
     width: 85px;
     display: inline-block;
     position: relative;
+    cursor: pointer;
+}
+
+@media (max-width: 850px) {
+    .header-action .hamburger {
+        width: 50px;
+    }
 }
 
 .header-action .hamburger::before {
     content: "";
     position: absolute;
-    width: 85px;
+    width: 100%;
     height: 2px;
     background: var(--white);
     left: 0;
@@ -766,7 +1326,7 @@ ul {
 .header-action .hamburger::after {
     content: "";
     position: absolute;
-    width: 85px;
+    width: 100%;
     height: 2px;
     background: var(--white);
     left: 0;
@@ -776,8 +1336,9 @@ ul {
     position: absolute;
     right: -334px;
     top: 152px;
-    background: #19ec60;
+    background: var(--secondary);
     transform: rotate(45deg);
+    display: none;
 }
 
 .header-mark-slide .text-container {
@@ -794,14 +1355,14 @@ ul {
     align-items: center;
     gap: 0.625rem;
     height: 100%;
-    animation: marquee 35s linear infinite;
+    animation: marquee 20s linear infinite;
 }
 
 .header-mark-slide .slide-text {
     color: #041c0c;
     leading-trim: both;
     text-edge: cap;
-    font-family: "Bingar DEMO";
+    font-family: var(--Bingar-DEMO);
     font-size: 70px;
     font-style: normal;
     font-weight: 400;

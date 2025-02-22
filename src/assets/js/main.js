@@ -4,17 +4,6 @@
 	'use strict';
 
 	$(document).ready(function () {
-		// odometer init
-		if ($('.odometer').length) {
-			var odo = $('.odometer');
-			odo.each(function () {
-				$(this).appear(function () {
-					var countNumber = $(this).attr('data-count');
-					$(this).html(countNumber);
-				});
-			});
-		}
-
 		// sticky header
 		$(window).on('scroll', function () {
 			if ($(window).scrollTop() >= 60) {
@@ -31,6 +20,24 @@
 			slidesPerView: 3,
 			freeMode: true,
 			watchSlidesProgress: true,
+			breakpoints: {
+				0: {
+					spaceBetween: 5,
+					slidesPerView: 1,
+				},
+				580: {
+					spaceBetween: 5,
+					slidesPerView: 2,
+				},
+				768: {
+					spaceBetween: 5,
+					slidesPerView: 3,
+				},
+				1200: {
+					spaceBetween: 5,
+					slidesPerView: 3,
+				},
+			},
 		});
 		var swiper2 = new Swiper('.mySwiper2', {
 			loop: true,
@@ -39,8 +46,108 @@
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
 			},
+			breakpoints: {
+				// 0: {
+				// 	spaceBetween: 50,
+				// },
+				// 768: {
+				// 	spaceBetween: 100,
+				// },
+				// 1200: {
+				// 	spaceBetween: 50,
+				// },
+			},
 			thumbs: {
 				swiper: swiper,
+			},
+
+			on: {
+				slideChangeTransitionStart: function () {
+					let activeSlide = document.querySelector('.swiper-slide-active');
+
+					// Reset all elements before animation
+					gsap.set(activeSlide.querySelector('.title'), { opacity: 0, y: 50 });
+					gsap.set(activeSlide.querySelector('.description'), {
+						opacity: 0,
+						y: 50,
+					});
+					gsap.set(activeSlide.querySelector('.text-mid'), {
+						opacity: 0,
+						y: 50,
+					});
+					gsap.set(activeSlide.querySelector('.email-box'), {
+						opacity: 0,
+						y: 50,
+					});
+					gsap.set(activeSlide.querySelector('.slide-image'), {
+						opacity: 0,
+						scale: 1.1,
+					});
+
+					// Animate elements in the active slide
+					gsap.to(activeSlide.querySelector('.title'), {
+						opacity: 1,
+						y: 0,
+						duration: 1,
+						ease: 'power2.out',
+						delay: 0.2,
+					});
+
+					gsap.fromTo(
+						activeSlide.querySelector('.star-icon'),
+						{ rotation: 0 }, // Start at 0 degrees
+						{
+							rotation: 90, // Rotate 2 full times
+							duration: 2, // Smooth animation
+							ease: 'power2.out',
+						}
+					);
+
+					gsap.to(activeSlide.querySelector('.text-mid'), {
+						opacity: 1,
+						y: 0,
+						duration: 1,
+						ease: 'power2.out',
+						delay: 0.3,
+					});
+					gsap.to(activeSlide.querySelector('.description'), {
+						opacity: 1,
+						y: 0,
+						duration: 1,
+						ease: 'power2.out',
+						delay: 0.4,
+					});
+
+					gsap.to(activeSlide.querySelector('.email-box'), {
+						opacity: 1,
+						y: 0,
+						duration: 1,
+						ease: 'power2.out',
+						delay: 0.6,
+					});
+
+					gsap.to(activeSlide.querySelector('.slide-image'), {
+						opacity: 1,
+						scale: 1,
+						duration: 1.2,
+						ease: 'power2.out',
+						delay: 0.8,
+					});
+
+					// Text Splitting
+					const titleElement = activeSlide.querySelector('.title');
+					const splitTitle = new SplitText(titleElement, { type: 'chars' });
+
+					gsap.set(splitTitle.chars, { opacity: 0, y: 50 });
+
+					gsap.to(splitTitle.chars, {
+						opacity: 1,
+						y: 0,
+						duration: 1,
+						stagger: 0.05,
+						ease: 'power2.out',
+					});
+				},
 			},
 		});
 	});
@@ -112,33 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: 'power2.out', // Smooth easing
 	});
 
-	// Subtitle animation
-	gsap.from('.section-subtitle', {
-		scrollTrigger: {
-			trigger: '.section-subtitle',
-			start: 'top 85%',
-			toggleActions: 'play none none reverse',
-		},
-		opacity: 0,
-		y: 50, // Slide in from below
-		duration: 1.2,
-		delay: 0.3, // Delay for better timing with the title
-		ease: 'power2.out',
-	});
-
-	// Profile image animation
-	gsap.from('.my-profile-wrap', {
-		scrollTrigger: {
-			trigger: '.my-profile-wrap',
-			start: 'top 85%',
-			toggleActions: 'play none none reverse',
-		},
-		opacity: 0,
-		scale: 0.8, // Start with a smaller scale
-		duration: 1.5,
-		ease: 'elastic.out(1, 0.5)', // Elastic bounce effect
-	});
-
 	// Text content animation
 	gsap.from('.content', {
 		scrollTrigger: {
@@ -152,4 +232,127 @@ document.addEventListener('DOMContentLoaded', () => {
 		stagger: 0.3, // Stagger the animation for each line
 		ease: 'power3.out',
 	});
+
+	// Animate work-title elements on every scroll
+	gsap.utils.toArray('.work-title').forEach((title) => {
+		gsap.fromTo(
+			title,
+			{ opacity: 1, y: 0 },
+			{
+				opacity: 0,
+				y: -50,
+				duration: 0.8,
+				ease: 'power2.inOut',
+				scrollTrigger: {
+					trigger: title,
+					start: 'top 20%',
+					end: 'top 0%',
+					toggleActions: 'play none none reverse',
+					scrub: 1,
+				},
+			}
+		);
+	});
+
+	gsap.fromTo(
+		'.work-img',
+		{ opacity: 1, y: 0 },
+		{
+			opacity: 0,
+			y: -50,
+			duration: 0.8,
+			ease: 'power2.inOut',
+			scrollTrigger: {
+				trigger: '.work-img',
+				start: 'top 20%',
+				end: 'top 0%',
+				toggleActions: 'play none none reverse',
+				scrub: 1,
+			},
+		}
+	);
+	gsap.fromTo(
+		'.work-fs-4',
+		{ opacity: 1, y: 0 },
+		{
+			opacity: 0,
+			y: -50,
+			duration: 0.8,
+			ease: 'power2.inOut',
+			scrollTrigger: {
+				trigger: '.work-fs-4',
+				start: 'top 20%',
+				end: 'top 0%',
+				toggleActions: 'play none none reverse',
+				scrub: 1,
+			},
+		}
+	);
+
+	//   arrow icon on every scroll
+	gsap.fromTo(
+		'.arrow-icon',
+		{ x: -100, scale: 0.5, opacity: 0 },
+		{
+			x: 0, // Move to original position
+			scale: 1, // Zoom to normal size
+			opacity: 1,
+			duration: 1,
+			ease: 'power2.out',
+			scrollTrigger: {
+				trigger: '.arrow-icon',
+				start: 'top 100%',
+				end: 'top 10%',
+				toggleActions: 'play none none reverse',
+				scrub: 1,
+			},
+		}
+	);
+
+	gsap.fromTo(
+		'.footer-logo, .footer-page, .footer-info, .footer-social li',
+		{
+			opacity: 0,
+			y: 50, // Start from below
+		},
+		{
+			opacity: 1,
+			y: 0,
+			duration: 1.5,
+			// stagger: 0.02, // Stagger the animation for the elements
+			ease: 'power2.out',
+			scrollTrigger: {
+				trigger: '.footer',
+				start: 'top 80%', // Trigger when the footer section is 80% from the top of the viewport
+				end: 'top 50%', // End when the footer is 30% from the top
+				toggleActions: 'play none none play', // Trigger the animation on entering and reversing it on leave
+				scrub: 1,
+			},
+		}
+	);
+
+	// GSAP animation for news section items
+	gsap.fromTo(
+		'.card-item',
+		{
+			opacity: 0, // Start as invisible
+			y: 50, // Start below the original position
+		},
+		{
+			opacity: 1, // Fade in
+			y: 0, // Move to original position
+			duration: 1,
+			stagger: 0.2, // Stagger the animation for each item
+			ease: 'power2.out',
+			scrollTrigger: {
+				trigger: '.news', // Trigger is the .news section
+				start: 'top 80%', // Animation starts when 80% of the section enters the viewport
+				end: 'top 30%', // Animation ends when 30% of the section is in the viewport
+				toggleActions: 'play reverse play reverse', // Play when scrolling down, reverse when scrolling up
+				scrub: true, // Make the animation scroll synced
+				once: false, // Allow it to trigger every time the section comes into view
+				markers: false, // Disable markers for easier debugging
+			},
+		}
+	);
 });

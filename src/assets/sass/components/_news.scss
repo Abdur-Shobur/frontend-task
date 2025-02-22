@@ -2,6 +2,8 @@
 	width: calc(100% - 180px);
 	max-width: 1920px;
 	margin: 0 auto;
+	padding-top: 115px;
+	padding-bottom: 150px;
 
 	.section-title {
 		color: #030611;
@@ -58,7 +60,11 @@
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 30px;
+	// position: relative;
 	.card-item {
+		&:nth-child(even) {
+			margin-top: 75px;
+		}
 		height: 550px;
 		flex-shrink: 0;
 		object-fit: cover;
@@ -79,6 +85,7 @@
 			height: 50%;
 			background: linear-gradient(180deg, rgba(18, 16, 16, 0) 0%, #121010 100%);
 			z-index: 0;
+			transition: 0.3s;
 		}
 		.badge-wrap {
 			display: flex;
@@ -113,9 +120,10 @@
 			bottom: 0;
 			left: 0;
 			width: 100%;
-			height: 206px;
+			height: 0;
 			background: transparent;
 			z-index: 0;
+			transition: 0.3s;
 		}
 		&:hover {
 			&::before {
@@ -123,6 +131,7 @@
 			}
 			&::after {
 				background: #000;
+				height: 206px;
 			}
 		}
 	}

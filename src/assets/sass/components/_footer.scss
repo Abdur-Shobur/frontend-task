@@ -1,1 +1,114 @@
- 
+.footer {
+	background: var(--black2);
+	color: var(--white);
+	padding: 112px 90px 70px 90px;
+}
+.footer-social {
+	ul {
+		display: flex;
+		justify-content: space-between;
+		// gap: 10px;
+		li {
+			a {
+				color: #fff;
+				leading-trim: both;
+				text-edge: cap;
+				font-family: var(--Bingar-DEMO);
+				font-size: 70px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 42px; /* 60% */
+				text-transform: uppercase;
+				border-radius: 100px;
+				border: 1px solid #fff;
+				display: inline-flex;
+				padding: 50px 60px;
+				justify-content: center;
+				align-items: center;
+				gap: 10px;
+				transition: all 0.3s ease;
+				&:hover {
+					background: #fff;
+					color: var(--black2);
+				}
+			}
+		}
+	}
+}
+
+.footer-top-area {
+	border-bottom: 3px solid var(--white);
+	margin-bottom: 70px;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 30px;
+
+	.footer-logo {
+		grid-column: span 2;
+		border-right: 3px solid var(--white);
+
+		img {
+		}
+	}
+
+	.footer-pages {
+		border-right: 3px solid var(--white);
+		flex: 1;
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 110px;
+		grid-column: span 7;
+		padding-left: 50px;
+		padding-right: 50px;
+		.footer-page {
+			&-title {
+				color: #fff;
+				leading-trim: both;
+				text-edge: cap;
+				font-family: 'Hagrid Extrabold';
+				font-size: 35px;
+				font-style: normal;
+				font-weight: 800;
+				line-height: 60px; /* 171.429% */
+				text-transform: uppercase;
+			}
+
+			ul {
+				li {
+					a {
+						color: #fff;
+						leading-trim: both;
+						text-edge: cap;
+						font-family: var(--Bingar-DEMO);
+						font-size: 30px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 42px; /* 140% */
+
+						transition: all 0.3s ease;
+						&:hover {
+							margin-left: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.footer-info {
+		grid-column: span 3;
+		&-text {
+			color: #fff;
+			max-width: 324px;
+			margin-left: auto;
+			leading-trim: both;
+			text-edge: cap;
+			font-family: 'Hagrid Extrabold';
+			font-size: 35px;
+			font-style: normal;
+			font-weight: 800;
+			line-height: 45px; /* 128.571% */
+			text-transform: uppercase;
+		}
+	}
+}

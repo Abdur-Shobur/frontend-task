@@ -1,3 +1,4 @@
+// banner
 .banner {
 	background: var(--primary);
 	color: var(--white);
@@ -5,6 +6,16 @@
 	.banner-main {
 		padding-top: 45px;
 		width: calc(100% - 200px);
+
+		@include responsive(xl) {
+			width: calc(100% - 150px);
+		}
+		@include responsive(lg) {
+			width: calc(100% - 100px);
+		}
+		@include responsive(md) {
+			width: calc(100% - 50px);
+		}
 	}
 	.title-box {
 		display: flex;
@@ -12,41 +23,113 @@
 		align-items: center;
 		margin-left: 415px;
 
+		@media screen and (max-width: 1775px) {
+			margin-left: 300px;
+			justify-content: space-around;
+		}
+
+		@media screen and (max-width: 1500px) {
+			margin-left: 165px;
+		}
+
+		@media screen and (max-width: 1100px) {
+			margin-left: 150px;
+		}
+
+		@media screen and (max-width: 768px) {
+			margin-left: 80px;
+		}
+		@media screen and (max-width: 420px) {
+			margin-left: 24px;
+		}
+
 		.description {
 			max-width: 460px;
 			color: #adbcf0;
 			leading-trim: both;
 			text-edge: cap;
-			font-family: 'Bingar DEMO';
+			font-family: var(--Bingar-DEMO);
 			font-size: 28px;
 			font-style: normal;
 			font-weight: 400;
 			margin-bottom: -100px;
 			line-height: normal;
 			padding-right: 30px;
+			@media screen and (max-width: 1420px) {
+				margin-bottom: -40px;
+				font-size: 24px;
+			}
+			@include responsive(xl) {
+				max-width: 350px;
+			}
+			@media screen and (max-width: 1100px) {
+				max-width: 250px;
+				font-size: 18px;
+			}
+			@media screen and (max-width: 850px) {
+				max-width: 200px;
+				padding-right: 0;
+			}
+			@media screen and (max-width: 420px) {
+				max-width: 170px;
+				font-size: 16px;
+			}
 		}
 
 		.title-area {
 			display: flex;
 			align-items: center;
 			gap: 40px;
+
+			@media screen and (max-width: 580px) {
+				gap: 20px;
+			}
+			@media screen and (max-width: 420px) {
+				gap: 5px;
+			}
 		}
 
 		.star-icon {
 			margin-bottom: -100px;
+
+			@media screen and (max-width: 1775px) {
+				margin-bottom: -70px;
+				width: 130px;
+			}
+			@media screen and (max-width: 1420px) {
+				margin-bottom: -45px;
+				width: 90px;
+			}
+			@media screen and (max-width: 1100px) {
+				margin-bottom: -30px;
+				width: 60px;
+			}
+			@media screen and (max-width: 580px) {
+				margin-bottom: -18px;
+				width: 38px;
+			}
+			@media screen and (max-width: 420px) {
+				margin-bottom: -5px;
+				width: 24px;
+			}
 		}
 	}
 
+	// email box
 	.email-box {
 		text-align: center;
 		margin-left: 42%;
+
+		@media screen and (max-width: 1775px) {
+			margin-left: 17%;
+		}
 		.email-text {
 			color: #fff;
 
 			text-align: center;
 			leading-trim: both;
 			text-edge: cap;
-			font-family: 'Bingar DEMO';
+			font-family: var(--Bingar-DEMO);
 			font-size: 35px;
 			font-style: normal;
 			font-weight: 400;
@@ -54,10 +137,31 @@
 			text-transform: uppercase;
 			margin-top: 50px;
 			display: inline-block;
+
+			@include responsive(xl) {
+				font-size: 28px;
+			}
+			@include responsive(lg) {
+				font-size: 24px;
+				margin-top: 30px;
+			}
+			@include responsive(md) {
+				font-size: 20px;
+				margin-top: 20px;
+			}
+			@include responsive(sm) {
+				font-size: 16px;
+			}
 		}
 	}
+
+	// swiper
 	.swiper-wrapper {
 		padding-bottom: 390px;
+
+		@media screen and (max-width: 550px) {
+			padding-bottom: 175px;
+		}
 	}
 	.swiper-slide {
 		.slide-image-container {
@@ -80,10 +184,33 @@
 				-webkit-mask-size: cover;
 				mask-size: cover;
 				background-size: cover;
+
+				@media screen and (max-width: 1500px) {
+					max-width: 700px;
+				}
+
+				@include responsive(xl) {
+					max-width: 568px;
+					bottom: -314px;
+				}
+
+				@media screen and (max-width: 1100px) {
+					max-width: 455px;
+				}
+				@media screen and (max-width: 910px) {
+					bottom: -241px;
+				}
+				@media screen and (max-width: 550px) {
+					bottom: -180px;
+				}
+				@media screen and (max-width: 420px) {
+					max-width: 320px;
+				}
 			}
 		}
 	}
 
+	// tumb images
 	.tumb-images {
 		max-width: 582px;
 		margin-left: auto;
@@ -92,6 +219,35 @@
 		right: 0;
 		bottom: 65px;
 
+		@media screen and (max-width: 1420px) {
+			margin-right: 25px;
+		}
+		@include responsive(xl) {
+			bottom: 145px;
+			max-width: 560px;
+		}
+		@media screen and (max-width: 1100px) {
+			max-width: 460px;
+		}
+		@media screen and (max-width: 850px) {
+			max-width: 368px;
+		}
+		@media screen and (max-width: 768px) {
+			max-width: 300px;
+		}
+		@media screen and (max-width: 668px) {
+			max-width: 250px;
+		}
+		@media screen and (max-width: 630px) {
+			max-width: 200px;
+		}
+		@media screen and (max-width: 600px) {
+			max-width: 150px;
+		}
+		@media screen and (max-width: 580px) {
+			max-width: 70px;
+			bottom: 30px;
+		}
 		.swiper-wrapper {
 			justify-content: end;
 		}
@@ -99,7 +255,7 @@
 			color: #fff;
 			leading-trim: both;
 			text-edge: cap;
-			// font-family: 'Bingar DEMO';
+			// font-family: var(--Bingar-DEMO);
 			font-size: 22px;
 			font-style: normal;
 			font-weight: 400;
@@ -108,12 +264,37 @@
 			text-transform: uppercase;
 			text-align: start;
 			margin-bottom: 18px;
+
+			@media screen and (max-width: 1420px) {
+				font-size: 16px;
+				margin-bottom: 10px;
+			}
 		}
 		img {
-			width: 180.786px;
-			height: 174.329px;
+			width: 180px;
+			height: 175px;
 			flex-shrink: 0;
 			border-radius: 30px;
+
+			@media screen and (max-width: 1420px) {
+				width: 150px;
+				height: 145px;
+			}
+
+			@include responsive(xl) {
+				width: 115px;
+				height: 115px;
+			}
+			@include responsive(md) {
+				width: 80px;
+				height: 80px;
+				border-radius: 20px;
+			}
+			@media screen and (max-width: 600px) {
+				width: 50px;
+				height: 50px;
+				border-radius: 15px;
+			}
 		}
 	}
 
@@ -137,22 +318,88 @@
 	font-weight: 800;
 	line-height: 1;
 
+	@media screen and (max-width: 1775px) {
+		font-size: 150px;
+	}
+	@media screen and (max-width: 1420px) {
+		font-size: 100px;
+	}
+	@media screen and (max-width: 1100px) {
+		font-size: 80px;
+	}
+	@media screen and (max-width: 930px) {
+		font-size: 56px;
+	}
+	@media screen and (max-width: 580px) {
+		font-size: 40px;
+	}
+	@media screen and (max-width: 420px) {
+		font-size: 32px;
+	}
+
 	.small-text {
 		color: #fff;
 		leading-trim: both;
 		text-edge: cap;
-		font-family: 'Bingar DEMO';
+		font-family: var(--Bingar-DEMO);
 		font-size: 30px;
 		font-style: normal;
 		font-weight: 400;
 		line-height: normal;
 		text-transform: uppercase;
+
+		@media screen and (max-width: 1775px) {
+			font-size: 28px;
+		}
+
+		@include responsive(xl) {
+			font-size: 24px;
+		}
+
+		@media screen and (max-width: 1100px) {
+			font-size: 20px;
+		}
 	}
 
 	&.fz-210 {
 		font-size: 210px;
+
+		@media screen and (max-width: 1775px) {
+			font-size: 155px;
+		}
+		@media screen and (max-width: 1420px) {
+			font-size: 110px;
+		}
+		@media screen and (max-width: 1100px) {
+			font-size: 90px;
+		}
+		@media screen and (max-width: 930px) {
+			font-size: 50px;
+		}
+		@media screen and (max-width: 580px) {
+			font-size: 45px;
+		}
+		@media screen and (max-width: 420px) {
+			font-size: 35px;
+		}
 	}
 	&.fz-237 {
 		font-size: 237px;
+
+		@media screen and (max-width: 1775px) {
+			font-size: 160px;
+		}
+		@media screen and (max-width: 1420px) {
+			font-size: 126px;
+		}
+		@media screen and (max-width: 1100px) {
+			font-size: 110px;
+		}
+		@media screen and (max-width: 930px) {
+			font-size: 65px;
+		}
+		@media screen and (max-width: 580px) {
+			font-size: 45px;
+		}
 	}
 }

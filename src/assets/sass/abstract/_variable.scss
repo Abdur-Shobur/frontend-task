@@ -40,6 +40,8 @@ $baseFontSize: 16;
 :root {
 	--heading-font: 'Marcellus', serif;
 	--body-font: 'Poppins', serif;
+	--Hagrid-font: 'Hagrid Regular';
+	--Bingar-DEMO: 'Bingar DEMO';
 
 	// Color
 	--primary: #0c30ae;
@@ -47,6 +49,7 @@ $baseFontSize: 16;
 	--warn: #f7c600;
 	--white: #ffffff;
 	--black: #041c0c;
+	--black2: #151c02;
 
 	--text-primary: #2b2c3f;
 	--text-secondary: #393f44;
@@ -70,6 +73,7 @@ body {
 	line-height: normal;
 	overflow: hidden;
 	overflow-y: auto;
+	// position: relative;
 }
 // h1,
 // h2,

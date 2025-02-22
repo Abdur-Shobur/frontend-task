@@ -19,6 +19,10 @@
 	&-logo {
 		border-right: 2px solid var(--white);
 		padding: rem(29) rem(50);
+
+		@include responsive(xmd) {
+			padding: rem(15) rem(20);
+		}
 	}
 
 	&-action {
@@ -26,6 +30,12 @@
 		align-items: center;
 		gap: rem(53);
 		padding-right: rem(50);
+
+		@include responsive(xmd) {
+			padding-right: rem(20);
+			gap: rem(30);
+		}
+
 		.cart {
 			margin-bottom: 2px;
 			display: inline-block;
@@ -36,11 +46,16 @@
 			width: 85px;
 			display: inline-block;
 			position: relative;
+			cursor: pointer;
+
+			@include responsive(xmd) {
+				width: 50px;
+			}
 
 			&::before {
 				content: '';
 				position: absolute;
-				width: 85px;
+				width: 100%;
 				height: 2px;
 				background: var(--white);
 				left: 0;
@@ -50,7 +65,7 @@
 			&::after {
 				content: '';
 				position: absolute;
-				width: 85px;
+				width: 100%;
 				height: 2px;
 				background: var(--white);
 				left: 0;
@@ -62,8 +77,9 @@
 	position: absolute;
 	right: -334px;
 	top: 152px;
-	background: #19ec60;
+	background: var(--secondary);
 	transform: rotate(45deg);
+	display: none;
 	.text-container {
 		padding-left: 20px;
 		padding-right: 20px;
@@ -78,13 +94,13 @@
 		align-items: center;
 		gap: rem(10);
 		height: 100%;
-		animation: marquee 35s linear infinite;
+		animation: marquee 20s linear infinite;
 	}
 	.slide-text {
 		color: #041c0c;
 		leading-trim: both;
 		text-edge: cap;
-		font-family: 'Bingar DEMO';
+		font-family: var(--Bingar-DEMO);
 		font-size: 70px;
 		font-style: normal;
 		font-weight: 400;
