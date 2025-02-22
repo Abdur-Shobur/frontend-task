@@ -185,9 +185,9 @@ sections.forEach((content) => {
 			duration: 1,
 			ease: 'power2.out',
 			scrollTrigger: {
-				trigger: content, // Element to watch
-				start: 'top 90%', // Trigger animation when the top of the element reaches 80% of the viewport height
-				toggleActions: 'play none none reverse', // Actions: onEnter, onLeave, onEnterBack, onLeaveBack
+				trigger: content,
+				start: 'top 90%',
+				toggleActions: 'play none none reverse',
 			},
 		}
 	);
@@ -335,13 +335,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			opacity: 1,
 			y: 0,
 			duration: 1.5,
-			// stagger: 0.02, // Stagger the animation for the elements
+			// stagger: 0.02,
 			ease: 'power2.out',
 			scrollTrigger: {
 				trigger: '.footer',
-				start: 'top 80%', // Trigger when the footer section is 80% from the top of the viewport
-				end: 'top 50%', // End when the footer is 30% from the top
-				toggleActions: 'play none none play', // Trigger the animation on entering and reversing it on leave
+				start: 'top 80%',
+				end: 'top 50%',
+				toggleActions: 'play none none play',
 				scrub: 1,
 			},
 		}
@@ -351,23 +351,23 @@ document.addEventListener('DOMContentLoaded', () => {
 	gsap.fromTo(
 		'.card-item',
 		{
-			opacity: 0, // Start as invisible
-			y: 50, // Start below the original position
+			opacity: 0,
+			y: 50,
 		},
 		{
-			opacity: 1, // Fade in
-			y: 0, // Move to original position
+			opacity: 1,
+			y: 0,
 			duration: 1,
-			stagger: 0.2, // Stagger the animation for each item
+			stagger: 0.2,
 			ease: 'power2.out',
 			scrollTrigger: {
-				trigger: '.news', // Trigger is the .news section
-				start: 'top 80%', // Animation starts when 80% of the section enters the viewport
-				end: 'top 30%', // Animation ends when 30% of the section is in the viewport
-				toggleActions: 'play reverse play reverse', // Play when scrolling down, reverse when scrolling up
-				scrub: true, // Make the animation scroll synced
-				once: false, // Allow it to trigger every time the section comes into view
-				markers: false, // Disable markers for easier debugging
+				trigger: '.news',
+				start: 'top 80%',
+				end: 'top 30%',
+				toggleActions: 'play reverse play reverse',
+				scrub: true,
+				once: false,
+				markers: false,
 			},
 		}
 	);
