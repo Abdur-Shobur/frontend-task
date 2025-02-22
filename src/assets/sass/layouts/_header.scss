@@ -14,6 +14,10 @@
 		background: var(--white);
 		bottom: 0;
 		left: 0;
+
+		@media screen and (max-width: 1500px) {
+			width: 100%;
+		}
 	}
 
 	&-logo {
@@ -79,7 +83,11 @@
 	top: 152px;
 	background: var(--secondary);
 	transform: rotate(45deg);
-	display: none;
+
+	@media screen and (max-width: 1500px) {
+		display: none;
+	}
+
 	.text-container {
 		padding-left: 20px;
 		padding-right: 20px;

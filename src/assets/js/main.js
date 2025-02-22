@@ -14,6 +14,18 @@
 		});
 
 		new WOW().init();
+		const text = document.querySelector('#text p');
+
+		text.innerHTML = text.innerText
+			.split('')
+			.map(
+				(char, i) =>
+					`<span style="transform:rotate(${parseInt(
+						i * 10
+					)}deg)">${char}</span>`
+			)
+			.join('');
+
 		var swiper = new Swiper('.mySwiper', {
 			loop: true,
 			spaceBetween: 10,

@@ -42,7 +42,13 @@
 		@media screen and (max-width: 420px) {
 			margin-left: 24px;
 		}
+		@media screen and (max-width: 432px) {
+			margin-left: 40px;
+		}
 
+		@media screen and (max-width: 375px) {
+			margin-left: 10px;
+		}
 		.description {
 			max-width: 460px;
 			color: #adbcf0;
@@ -69,6 +75,10 @@
 			@media screen and (max-width: 850px) {
 				max-width: 200px;
 				padding-right: 0;
+			}
+			@media screen and (max-width: 500px) {
+				max-width: 150px;
+				font-size: 14px;
 			}
 			@media screen and (max-width: 420px) {
 				max-width: 170px;
@@ -336,6 +346,9 @@
 	@media screen and (max-width: 420px) {
 		font-size: 32px;
 	}
+	@media screen and (max-width: 375px) {
+		font-size: 24px;
+	}
 
 	.small-text {
 		color: #fff;
@@ -382,6 +395,9 @@
 		@media screen and (max-width: 420px) {
 			font-size: 35px;
 		}
+		@media screen and (max-width: 375px) {
+			font-size: 26px;
+		}
 	}
 	&.fz-237 {
 		font-size: 237px;
@@ -400,6 +416,9 @@
 		}
 		@media screen and (max-width: 580px) {
 			font-size: 45px;
+		}
+		@media screen and (max-width: 375px) {
+			font-size: 35px;
 		}
 	}
 }
