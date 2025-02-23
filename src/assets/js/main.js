@@ -1,12 +1,22 @@
 /* Main Js Start */
 
+document.addEventListener('DOMContentLoaded', function () {
+	// Ensure loader is visible before the page starts loading
+	document.getElementById('loading').style.display = 'block';
+});
+
+window.addEventListener('load', function () {
+	// Hide loader once the page fully loads
+	document.getElementById('loading').style.display = 'none';
+});
+
 (function ($) {
 	'use strict';
 
 	$(document).ready(function () {
-		$(window).on('load', function () {
-			$('#loading').fadeOut();
-		});
+		// $(window).on('load', function () {
+		// 	$('#loading').fadeOut();
+		// });
 
 		// sticky header
 		$(window).on('scroll', function () {
@@ -18,6 +28,9 @@
 		});
 
 		new WOW().init();
+
+		Splitting();
+
 		const text = document.querySelector('#text p');
 
 		text.innerHTML = text.innerText
