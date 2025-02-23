@@ -72,8 +72,10 @@ body {
 	font-family: 'Bingar DEMO', sans-serif;
 	line-height: normal;
 	overflow: hidden;
-	overflow-y: auto;
+	// overflow-y: auto;
 	// position: relative;
+	overscroll-behavior: none;
+	overflow-x: hidden;
 }
 // h1,
 // h2,

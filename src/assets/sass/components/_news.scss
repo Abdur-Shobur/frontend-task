@@ -4,6 +4,7 @@
 	margin: 0 auto;
 	padding-top: 115px;
 	padding-bottom: 150px;
+	min-height: 900px;
 
 	@media screen and (max-width: 768px) {
 		width: calc(100% - 30px);
@@ -73,7 +74,8 @@
 .news-cards {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 30px;
+	gap: 24px;
+	row-gap: 50px;
 
 	@media screen and (max-width: 1400px) {
 		grid-template-columns: repeat(3, 1fr);
@@ -86,12 +88,6 @@
 	}
 	// position: relative;
 	.card-item {
-		&:nth-child(even) {
-			margin-top: 75px;
-			@media screen and (max-width: 1100px) {
-				margin-top: 0;
-			}
-		}
 		height: 550px;
 		flex-shrink: 0;
 		object-fit: cover;
@@ -139,6 +135,13 @@
 			display: block;
 			position: relative;
 			z-index: 1;
+
+			@media screen and (max-width: 1850px) {
+				font-size: 24px;
+			}
+			// @media screen and (max-width: 1850px) {
+			// 	font-size: 24px;
+			// }
 		}
 
 		&::after {

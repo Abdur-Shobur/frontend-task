@@ -221,7 +221,14 @@
 			width: 110.178px;
 			height: 104.869px;
 			z-index: 2;
-			animation: handshake 0.8s ease-in-out infinite;
+			animation: none;
+		}
+		.work-circle {
+			&:hover {
+				.logo {
+					animation: handshake 0.8s ease-in-out infinite;
+				}
+			}
 		}
 		.logo-bg {
 			background: #000;
@@ -282,10 +289,10 @@
 		}
 		@keyframes rotateText {
 			0% {
-				transform: rotate(360deg);
+				transform: rotate(0deg);
 			}
 			100% {
-				transform: rotate(0deg);
+				transform: rotate(360deg);
 			}
 		}
 		.text p span {
