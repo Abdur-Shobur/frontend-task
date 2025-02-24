@@ -40,21 +40,29 @@ $baseFontSize: 16;
 :root {
 	--heading-font: 'Marcellus', serif;
 	--body-font: 'Poppins', serif;
+	--Roboto: 'Roboto', serif;
 	--Hagrid-font: 'Hagrid Regular';
 	--Bingar-DEMO: 'Bingar DEMO';
+	--Hagrid-Extrabold: 'Hagrid Extrabold';
 
 	// Color
 	--primary: #0c30ae;
 	--secondary: #19ec60;
 	--warn: #f7c600;
 	--white: #ffffff;
+	--black-full: #000;
 	--black: #041c0c;
 	--black2: #151c02;
+	--black3: #030611;
+	--black4: #1c2503;
+	--blue-light: #adbcf0;
 
 	--text-primary: #2b2c3f;
 	--text-secondary: #393f44;
 
 	--text-of-white: #7d7d7d;
+
+	--gradient: linear-gradient(180deg, rgba(18, 16, 16, 0) 0%, #121010 100%);
 
 	// rounded
 	--radius: 35vmin;

@@ -9,10 +9,10 @@
 	}
 	overflow: hidden;
 	.work-title {
-		color: #041c0c;
+		color: var(--black);
 		leading-trim: both;
 		text-edge: cap;
-		font-family: 'Hagrid Extrabold';
+		font-family: var(--Hagrid-Extrabold);
 		font-style: normal;
 		font-weight: 800;
 		line-height: 200px; /* 105.263% */
@@ -206,10 +206,10 @@
 			position: absolute;
 			width: 376px;
 			height: 376px;
-			background: #fff;
+			background: var(--white);
 			background-size: cover;
 			border-radius: 50%;
-			border: 1px solid #041c0c;
+			border: 1px solid var(--black);
 		}
 		.logo {
 			position: absolute;
@@ -231,7 +231,7 @@
 			}
 		}
 		.logo-bg {
-			background: #000;
+			background: var(--black-full);
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -253,7 +253,7 @@
 			}
 		}
 		.mailto {
-			color: #1c2503;
+			color: var(--black4);
 			leading-trim: both;
 			text-edge: cap;
 			font-family: var(--Bingar-DEMO);

@@ -75,17 +75,7 @@ window.addEventListener('load', function () {
 				nextEl: '.swiper-button-next',
 				prevEl: '.swiper-button-prev',
 			},
-			breakpoints: {
-				// 0: {
-				// 	spaceBetween: 50,
-				// },
-				// 768: {
-				// 	spaceBetween: 100,
-				// },
-				// 1200: {
-				// 	spaceBetween: 50,
-				// },
-			},
+
 			thumbs: {
 				swiper: swiper,
 			},
@@ -270,165 +260,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		ease: 'power2.out', // Smooth easing
 	});
 
-	function horizontalLoop(items, config) {
-		items = gsap.utils.toArray(items);
-		config = config || {};
-		let tl = gsap.timeline({
-				repeat: config.repeat,
-				paused: config.paused,
-				defaults: { ease: 'none' },
-				onReverseComplete: () =>
-					tl.totalTime(tl.rawTime() + tl.duration() * 100),
-			}),
-			length = items.length,
-			startX = items[0].offsetLeft,
-			times = [],
-			widths = [],
-			xPercents = [],
-			curIndex = 0,
-			pixelsPerSecond = (config.speed || 1) * 100,
-			snap =
-				config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1), // some browsers shift by a pixel to accommodate flex layouts, so for example if width is 20% the first element's width might be 242px, and the next 243px, alternating back and forth. So we snap to 5 percentage points to make things look more natural
-			totalWidth,
-			curX,
-			distanceToStart,
-			distanceToLoop,
-			item,
-			i;
-		gsap.set(items, {
-			// convert "x" to "xPercent" to make things responsive, and populate the widths/xPercents Arrays to make lookups faster.
-			xPercent: (i, el) => {
-				let w = (widths[i] = parseFloat(gsap.getProperty(el, 'width', 'px')));
-				xPercents[i] = snap(
-					(parseFloat(gsap.getProperty(el, 'x', 'px')) / w) * 100 +
-						gsap.getProperty(el, 'xPercent')
-				);
-				return xPercents[i];
-			},
-		});
-		gsap.set(items, { x: 0 });
-		totalWidth =
-			items[length - 1].offsetLeft +
-			(xPercents[length - 1] / 100) * widths[length - 1] -
-			startX +
-			items[length - 1].offsetWidth *
-				gsap.getProperty(items[length - 1], 'scaleX') +
-			(parseFloat(config.paddingRight) || 0);
-		for (i = 0; i < length; i++) {
-			item = items[i];
-			curX = (xPercents[i] / 100) * widths[i];
-			distanceToStart = item.offsetLeft + curX - startX;
-			distanceToLoop =
-				distanceToStart + widths[i] * gsap.getProperty(item, 'scaleX');
-			tl.to(
-				item,
-				{
-					xPercent: snap(((curX - distanceToLoop) / widths[i]) * 100),
-					duration: distanceToLoop / pixelsPerSecond,
-				},
-				0
-			)
-				.fromTo(
-					item,
-					{
-						xPercent: snap(
-							((curX - distanceToLoop + totalWidth) / widths[i]) * 100
-						),
-					},
-					{
-						xPercent: xPercents[i],
-						duration:
-							(curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
-						immediateRender: false,
-					},
-					distanceToLoop / pixelsPerSecond
-				)
-				.add('label' + i, distanceToStart / pixelsPerSecond);
-			times[i] = distanceToStart / pixelsPerSecond;
-		}
-		function toIndex(index, vars) {
-			vars = vars || {};
-			Math.abs(index - curIndex) > length / 2 &&
-				(index += index > curIndex ? -length : length); // always go in the shortest direction
-			let newIndex = gsap.utils.wrap(0, length, index),
-				time = times[newIndex];
-			if (time > tl.time() !== index > curIndex) {
-				// if we're wrapping the timeline's playhead, make the proper adjustments
-				vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
-				time += tl.duration() * (index > curIndex ? 1 : -1);
-			}
-			curIndex = newIndex;
-			vars.overwrite = true;
-			return tl.tweenTo(time, vars);
-		}
-		tl.next = (vars) => toIndex(curIndex + 1, vars);
-		tl.previous = (vars) => toIndex(curIndex - 1, vars);
-		tl.current = () => curIndex;
-		tl.toIndex = (index, vars) => toIndex(index, vars);
-		tl.times = times;
-		tl.progress(1, true).progress(0, true); // pre-render for performance
-		if (config.reversed) {
-			tl.vars.onReverseComplete();
-			tl.reverse();
-		}
-		return tl;
-	}
-	// Create array of elements to tween on
-	const boxes = gsap.utils.toArray('.SI');
-
-	// Setup the tween
-	const loop = horizontalLoop(boxes, {
-		paused: true, // Sets the tween to be paused initially
-		repeat: -1, // Makes sure the tween runs infinitely
-		duration: 1, // Animation duration
-		ease: 'power2.out', // Smooth easing
-	});
-
-	// Start the tween
-	loop.play(); // Call to start playing the tween
-
-	// var swiper = new Swiper('.SliderAnimation', {
-	// 	slidesPerView: 4, // Always show 4 slides
-	// 	spaceBetween: 20, // Adjust spacing between slides
-	// 	loop: true, // Infinite loop
-	// 	freeMode: true, // Continuous smooth scrolling
-	// 	autoplay: {
-	// 		delay: 0, // No delay between slides
-	// 		disableOnInteraction: false, // Keep autoplay even when user interacts
-	// 	},
-	// 	speed: 3000, // Adjust speed for smoothness
-	// 	loopAdditionalSlides: 4, // Preload extra slides to prevent flickering
-	// 	allowTouchMove: false, // Prevent manual dragging for perfect smoothness
-	// });
-
-	// var swiper = new Swiper('.SliderAnimation', {
-	// 	slidesPerView: 3,
-	// 	loop: true,
-	// 	centeredSlides: true,
-	// 	spaceBetween: 30,
-	// 	pagination: {
-	// 		el: '.swiper-pagination',
-	// 		clickable: true,
-	// 	},
-	// 	speed: 1000,
-	// 	autoplay: {
-	// 		delay: 0,
-	// 		enabled: true,
-	// 	},
-	// });
-
-	// var swiper = new Swiper('.SliderAnimation', {
-	// 	slidesPerView: 'auto',
-	// 	spaceBetween: 80,
-	// 	loop: true,
-	// 	speed: 6000,
-	// 	allowTouchMove: false,
-	// 	autoplay: {
-	// 		delay: 1,
-	// 		disableOnInteraction: false,
-	// 	},
-	// });
-
 	// Text content animation
 	gsap.from('.content', {
 		scrollTrigger: {
@@ -442,27 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		stagger: 0.3, // Stagger the animation for each line
 		ease: 'power3.out',
 	});
-
-	// Animate work-title elements on every scroll
-	// gsap.utils.toArray('.work-title').forEach((title) => {
-	// 	gsap.fromTo(
-	// 		title,
-	// 		{ opacity: 1, y: 0 },
-	// 		{
-	// 			opacity: 0,
-	// 			y: -50,
-	// 			duration: 0.8,
-	// 			ease: 'power2.inOut',
-	// 			scrollTrigger: {
-	// 				trigger: title,
-	// 				start: 'top 20%',
-	// 				end: 'top 0%',
-	// 				toggleActions: 'play none none reverse',
-	// 				scrub: 1,
-	// 			},
-	// 		}
-	// 	);
-	// });
 
 	gsap.utils.toArray('.work-title').forEach((title) => {
 		gsap.fromTo(
@@ -567,29 +377,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	chars.forEach((char, i) => {
 		smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 });
 	});
-
-	// GSAP animation for news section items
-	// gsap.fromTo(
-	// 	'.card-item',
-	// 	{
-	// 		opacity: 0,
-	// 		y: 50,
-	// 	},
-	// 	{
-	// 		opacity: 1,
-	// 		y: 0,
-	// 		duration: 1,
-	// 		stagger: 0.2,
-	// 		ease: 'power2.out',
-	// 		scrollTrigger: {
-	// 			trigger: '.news',
-	// 			start: 'top 80%',
-	// 			end: 'top 30%',
-	// 			toggleActions: 'play reverse play reverse',
-	// 			scrub: true,
-	// 			once: false,
-	// 			markers: false,
-	// 		},
-	// 	}
-	// );
 });

@@ -13,7 +13,7 @@
 	}
 
 	.section-title {
-		color: #030611;
+		color: var(--black3);
 		text-align: center;
 		leading-trim: both;
 		text-edge: cap;
@@ -38,11 +38,11 @@
 	flex-shrink: 0;
 	border-radius: 100px;
 	background: var(--warn);
-	color: var(--Font-Colors, #030611);
+	color: var(--black3);
 	text-align: center;
 	leading-trim: both;
 	text-edge: cap;
-	font-family: Roboto;
+	font-family: var(--Roboto);
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 500;
@@ -56,11 +56,11 @@
 	align-items: center;
 	gap: 4px;
 	.icon {
-		color: #fff;
+		color: var(--white);
 		font-size: 15px;
 	}
 	.date {
-		color: #fff;
+		color: var(--white);
 		leading-trim: both;
 		text-edge: cap;
 		font-family: Roboto;
@@ -106,7 +106,7 @@
 			left: 0;
 			width: 100%;
 			height: 50%;
-			background: linear-gradient(180deg, rgba(18, 16, 16, 0) 0%, #121010 100%);
+			background: var(--gradient);
 			z-index: 0;
 			transition: 0.3s;
 		}
@@ -120,13 +120,13 @@
 		}
 
 		.news-link {
-			color: var(--White, #fff);
+			color: var(--white);
 			text-align: center;
 			leading-trim: both;
 			text-edge: cap;
 
 			/* h5 */
-			font-family: Roboto;
+			font-family: var(--Roboto);
 			font-size: 30px;
 			font-style: normal;
 			font-weight: 600;
@@ -160,9 +160,17 @@
 				display: none;
 			}
 			&::after {
-				background: #000;
+				background: var(--black-full);
 				height: 206px;
 			}
 		}
+	}
+}
+
+.SliderAnimations {
+	height: 120px;
+	background: var(--secondary);
+	.swiper-wrappers {
+		height: 100%;
 	}
 }

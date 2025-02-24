@@ -38,17 +38,24 @@
 :root {
     --heading-font: "Marcellus", serif;
     --body-font: "Poppins", serif;
+    --Roboto: "Roboto", serif;
     --Hagrid-font: "Hagrid Regular";
     --Bingar-DEMO: "Bingar DEMO";
+    --Hagrid-Extrabold: "Hagrid Extrabold";
     --primary: #0c30ae;
     --secondary: #19ec60;
     --warn: #f7c600;
     --white: #ffffff;
+    --black-full: #000;
     --black: #041c0c;
     --black2: #151c02;
+    --black3: #030611;
+    --black4: #1c2503;
+    --blue-light: #adbcf0;
     --text-primary: #2b2c3f;
     --text-secondary: #393f44;
     --text-of-white: #7d7d7d;
+    --gradient: linear-gradient(180deg, rgba(18, 16, 16, 0) 0%, #121010 100%);
     --radius: 35vmin;
     --frame-size: calc(var(--radius) / 3);
     --d-outer: calc(var(--radius) * 2);
@@ -279,7 +286,7 @@ ul {
 
 .banner .title-box .description {
     max-width: 460px;
-    color: #adbcf0;
+    color: var(--blue-light);
     leading-trim: both;
     text-edge: cap;
     font-family: var(--Bingar-DEMO);
@@ -401,7 +408,7 @@ ul {
 }
 
 .banner .email-box .email-text {
-    color: #fff;
+    color: var(--white);
     text-align: center;
     leading-trim: both;
     text-edge: cap;
@@ -578,7 +585,7 @@ ul {
 }
 
 .banner .tumb-images .count-item {
-    color: #fff;
+    color: var(--white);
     leading-trim: both;
     text-edge: cap;
     font-size: 22px;
@@ -636,8 +643,8 @@ ul {
 }
 
 .title {
-    color: #fff;
-    font-family: "Hagrid Extrabold";
+    color: var(--white);
+    font-family: var(--Hagrid-Extrabold);
     font-size: 200px;
     font-style: normal;
     font-weight: 800;
@@ -687,7 +694,7 @@ ul {
 }
 
 .title .small-text {
-    color: #fff;
+    color: var(--white);
     leading-trim: both;
     text-edge: cap;
     font-family: var(--Bingar-DEMO);
@@ -871,7 +878,7 @@ ul {
 }
 
 .news .section-title {
-    color: #030611;
+    color: var(--black3);
     text-align: center;
     leading-trim: both;
     text-edge: cap;
@@ -899,11 +906,11 @@ ul {
     flex-shrink: 0;
     border-radius: 100px;
     background: var(--warn);
-    color: var(--Font-Colors, #030611);
+    color: var(--black3);
     text-align: center;
     leading-trim: both;
     text-edge: cap;
-    font-family: Roboto;
+    font-family: var(--Roboto);
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
@@ -919,12 +926,12 @@ ul {
 }
 
 .news-date .icon {
-    color: #fff;
+    color: var(--white);
     font-size: 15px;
 }
 
 .news-date .date {
-    color: #fff;
+    color: var(--white);
     leading-trim: both;
     text-edge: cap;
     font-family: Roboto;
@@ -978,7 +985,7 @@ ul {
     left: 0;
     width: 100%;
     height: 50%;
-    background: linear-gradient(180deg, rgba(18, 16, 16, 0) 0%, #121010 100%);
+    background: var(--gradient);
     z-index: 0;
     transition: 0.3s;
 }
@@ -993,12 +1000,12 @@ ul {
 }
 
 .news-cards .card-item .news-link {
-    color: var(--White, #fff);
+    color: var(--white);
     text-align: center;
     leading-trim: both;
     text-edge: cap;
   /* h5 */
-    font-family: Roboto;
+    font-family: var(--Roboto);
     font-size: 30px;
     font-style: normal;
     font-weight: 600;
@@ -1032,12 +1039,21 @@ ul {
 }
 
 .news-cards .card-item:hover::after {
-    background: #000;
+    background: var(--black-full);
     height: 206px;
 }
 
+.SliderAnimations {
+    height: 120px;
+    background: var(--secondary);
+}
+
+.SliderAnimations .swiper-wrappers {
+    height: 100%;
+}
+
 #loading {
-    background-color: #fff;
+    background-color: var(--white);
     height: 100%;
     width: 100%;
     position: fixed;
@@ -1065,7 +1081,7 @@ ul {
 
 .loader {
     font-size: 48px;
-    color: #000;
+    color: var(--black-full);
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 400;
@@ -1161,10 +1177,10 @@ ul {
 }
 
 .work .work-title {
-    color: #041c0c;
+    color: var(--black);
     leading-trim: both;
     text-edge: cap;
-    font-family: "Hagrid Extrabold";
+    font-family: var(--Hagrid-Extrabold);
     font-style: normal;
     font-weight: 800;
     line-height: 200px;
@@ -1437,10 +1453,10 @@ ul {
     position: absolute;
     width: 376px;
     height: 376px;
-    background: #fff;
+    background: var(--white);
     background-size: cover;
     border-radius: 50%;
-    border: 1px solid #041c0c;
+    border: 1px solid var(--black);
 }
 
 .work .work-fs-4 .logo {
@@ -1461,7 +1477,7 @@ ul {
 }
 
 .work .work-fs-4 .logo-bg {
-    background: #000;
+    background: var(--black-full);
     position: absolute;
     left: 50%;
     top: 50%;
@@ -1486,7 +1502,7 @@ ul {
 }
 
 .work .work-fs-4 .mailto {
-    color: #1c2503;
+    color: var(--black4);
     leading-trim: both;
     text-edge: cap;
     font-family: var(--Bingar-DEMO);
@@ -1598,7 +1614,7 @@ ul {
 }
 
 .footer-social ul li a {
-    color: #fff;
+    color: var(--white);
     leading-trim: both;
     text-edge: cap;
     font-family: var(--Bingar-DEMO);
@@ -1609,7 +1625,7 @@ ul {
  /* 60% */
     text-transform: uppercase;
     border-radius: 100px;
-    border: 1px solid #fff;
+    border: 1px solid var(--white);
     display: inline-flex;
     padding: 50px 60px;
     justify-content: center;
@@ -1619,7 +1635,7 @@ ul {
 }
 
 .footer-social ul li a:hover {
-    background: #fff;
+    background: var(--white);
     color: var(--black2);
 }
 
@@ -1715,7 +1731,7 @@ ul {
 }
 
 .footer-top-area .footer-pages .footer-page-title {
-    color: #fff;
+    color: var(--white);
     leading-trim: both;
     text-edge: cap;
     font-family: "Hagrid Extrabold";
@@ -1734,7 +1750,7 @@ ul {
 }
 
 .footer-top-area .footer-pages .footer-page ul li a {
-    color: #fff;
+    color: var(--white);
     leading-trim: both;
     text-edge: cap;
     font-family: var(--Bingar-DEMO);
@@ -1761,12 +1777,12 @@ ul {
 }
 
 .footer-top-area .footer-info-text {
-    color: #fff;
+    color: var(--white);
     max-width: 324px;
     margin-left: auto;
     leading-trim: both;
     text-edge: cap;
-    font-family: "Hagrid Extrabold";
+    font-family: var(--Hagrid-Extrabold);
     font-size: 35px;
     font-style: normal;
     font-weight: 800;

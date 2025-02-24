@@ -35,7 +35,7 @@
 		}
 		li {
 			a {
-				color: #fff;
+				color: var(--white);
 				leading-trim: both;
 				text-edge: cap;
 				font-family: var(--Bingar-DEMO);
@@ -45,7 +45,7 @@
 				line-height: 42px; /* 60% */
 				text-transform: uppercase;
 				border-radius: 100px;
-				border: 1px solid #fff;
+				border: 1px solid var(--white);
 				display: inline-flex;
 				padding: 50px 60px;
 				justify-content: center;
@@ -54,7 +54,7 @@
 				transition: all 0.3s ease;
 
 				&:hover {
-					background: #fff;
+					background: var(--white);
 					color: var(--black2);
 				}
 
@@ -134,7 +134,7 @@
 		}
 		.footer-page {
 			&-title {
-				color: #fff;
+				color: var(--white);
 				leading-trim: both;
 				text-edge: cap;
 				font-family: 'Hagrid Extrabold';
@@ -152,7 +152,7 @@
 			ul {
 				li {
 					a {
-						color: #fff;
+						color: var(--white);
 						leading-trim: both;
 						text-edge: cap;
 						font-family: var(--Bingar-DEMO);
@@ -179,12 +179,12 @@
 		}
 
 		&-text {
-			color: #fff;
+			color: var(--white);
 			max-width: 324px;
 			margin-left: auto;
 			leading-trim: both;
 			text-edge: cap;
-			font-family: 'Hagrid Extrabold';
+			font-family: var(--Hagrid-Extrabold);
 			font-size: 35px;
 			font-style: normal;
 			font-weight: 800;

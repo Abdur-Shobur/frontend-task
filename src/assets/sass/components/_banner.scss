@@ -51,7 +51,7 @@
 		}
 		.description {
 			max-width: 460px;
-			color: #adbcf0;
+			color: var(--blue-light);
 			leading-trim: both;
 			text-edge: cap;
 			font-family: var(--Bingar-DEMO);
@@ -134,7 +134,7 @@
 			margin-left: 17%;
 		}
 		.email-text {
-			color: #fff;
+			color: var(--white);
 
 			text-align: center;
 			leading-trim: both;
@@ -262,7 +262,7 @@
 			justify-content: end;
 		}
 		.count-item {
-			color: #fff;
+			color: var(--white);
 			leading-trim: both;
 			text-edge: cap;
 			// font-family: var(--Bingar-DEMO);
@@ -321,8 +321,8 @@
 	// }
 }
 .title {
-	color: #fff;
-	font-family: 'Hagrid Extrabold';
+	color: var(--white);
+	font-family: var(--Hagrid-Extrabold);
 	font-size: 200px;
 	font-style: normal;
 	font-weight: 800;
@@ -351,7 +351,7 @@
 	}
 
 	.small-text {
-		color: #fff;
+		color: var(--white);
 		leading-trim: both;
 		text-edge: cap;
 		font-family: var(--Bingar-DEMO);
